@@ -13,6 +13,7 @@ Plug 'morhetz/gruvbox'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree'
 
 call plug#end()
 
@@ -32,6 +33,7 @@ set clipboard=unnamed
 
 " Show line number
 set nu
+set cursorline
 
 " Auto update file when have changes
 set autoread
@@ -56,6 +58,8 @@ set directory=/tmp
 " Prettier
 let g:prettier#config#tab_width = 4
 let g:prettier#config#use_tabs = 'true'
+
+
 
 " ----- Override command
 
