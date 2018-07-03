@@ -5,24 +5,23 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 
-
 " ----- Install dependencies
 call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+" Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 call plug#end()
 
 
-
 " ----- Editor setup
-if has('mouse')
-  set mouse=a
-endif
+" if has('mouse')
+"   set mouse=a
+" endif
 
 " Set theme
 colorscheme gruvbox
@@ -56,10 +55,8 @@ set backupskip=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*
 set directory=/tmp
 
 " Prettier
-let g:prettier#config#tab_width = 4
-let g:prettier#config#use_tabs = 'true'
-
-
+" let g:prettier#config#tab_width = 4
+" let g:prettier#config#use_tabs = 'true'
 
 " ----- Override command
 
@@ -72,3 +69,9 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-l> <C-W>l
 map <C-h> <C-W>h
+
+" Nerd tree
+map <Leader>n :NERDTreeToggle<CR>
+
+" close vim if the only window left open is a NERDTree 
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
