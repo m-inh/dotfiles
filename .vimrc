@@ -5,11 +5,11 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 
+
 " ----- Install dependencies
 call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
-" Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'pangloss/vim-javascript'
@@ -17,11 +17,6 @@ Plug 'mxw/vim-jsx'
 
 call plug#end()
 
-
-" ----- Editor setup
-" if has('mouse')
-"   set mouse=a
-" endif
 
 " Set theme
 colorscheme gruvbox
@@ -44,6 +39,7 @@ set si "smart indent
 
 " Use tab
 set tabstop=4
+set shiftwidth=4
 
 " Disable backup-file, swap
 set nobackup
@@ -53,10 +49,6 @@ set backupdir=~/tmp,/tmp
 set backupcopy=yes
 set backupskip=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*
 set directory=/tmp
-
-" Prettier
-" let g:prettier#config#tab_width = 4
-" let g:prettier#config#use_tabs = 'true'
 
 " ----- Override command
 
